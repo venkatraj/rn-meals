@@ -30,7 +30,14 @@ const MealsNavigator = () => {
           name="CategoryMeals"
           component={CategoryMealsScreen}
         />
-        <Stack.Screen name="MealDetail" component={MealDetailScreen} />
+        <Stack.Screen
+          options={({ route }) => ({
+            id: route.params.id,
+            title: route.params.title,
+          })}
+          name="MealDetail"
+          component={MealDetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const CategoryGridTile = (props) => {
-  const { id, title, color, onSelect } = props;
+  const { title, color, onSelect } = props;
   return (
     <TouchableOpacity
       style={{ ...styles.gridItem, backgroundColor: color }}
