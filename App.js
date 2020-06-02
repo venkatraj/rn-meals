@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import MealsNavigator from './navigation/MealsNavigator';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -22,11 +23,7 @@ export default function App() {
     );
   }
 
-  return (
-    <View style={styles.rootContainer}>
-      <Text style={styles.text}>Hello World</Text>
-    </View>
-  );
+  return <MealsNavigator />;
 }
 
 const styles = StyleSheet.create({
