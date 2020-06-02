@@ -13,8 +13,20 @@ const MealsNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Categories" component={CategoriesScreen} />
-        <Stack.Screen name="CategoryMeals" component={CategoryMealsScreen} />
+        <Stack.Screen
+          name="Categories"
+          component={CategoriesScreen}
+          options={{
+            title: 'Meal Categories!!',
+          }}
+        />
+        <Stack.Screen
+          options={({ route }) => ({
+            title: route.params.title,
+          })}
+          name="CategoryMeals"
+          component={CategoryMealsScreen}
+        />
         <Stack.Screen name="MealDetail" component={MealDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
