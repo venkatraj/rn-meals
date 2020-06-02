@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ClippingRectangle } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -21,9 +21,12 @@ const MealsNavigator = () => {
           }}
         />
         <Stack.Screen
-          options={({ route }) => ({
-            title: route.params.title,
-          })}
+          options={({ route }) => {
+            return {
+              id: route.params.id,
+              title: route.params.title,
+            };
+          }}
           name="CategoryMeals"
           component={CategoryMealsScreen}
         />

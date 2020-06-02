@@ -1,19 +1,53 @@
 import React from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
+import { MEALS } from '../data/dummy-data';
+import MealItem from '../components/MealItem';
 
 const CategoryMealsScreen = (props) => {
-  const { navigation } = props;
-  return (
-    <View>
-      <Text>The Category Meals Screen</Text>
-      <Button
-        title="Go to Meal Detail"
-        onPress={() => navigation.navigate('MealDetail')}
+  const { navigation, route } = props;
+  const { id: categoryId } = route.params;
+  const selectedMeals = MEALS.filter((meal) =>
+    meal.categoryIds.includes(categoryId)
+  );
+
+  const onSelectHandler = (props) => {
+    navigation.navigate('MealDetail');
+  };
+
+  const renderMealItem = (itemData) => {
+    const {
+      title,
+      duration,
+      complexity,
+      affordability,
+      imageUrl,
+    } = itemData.item;
+    return (
+      <MealItem
+        onSelect={onSelectHandler}
+        title={title}
+        duration={duration}
+        complexity={complexity}
+        affordability={affordability}
+        image={imageUrl}
       />
-    </View>
+    );
+  };
+
+  return (
+    <FlatList
+      style={styles.screen}
+      data={selectedMeals}
+      renderItem={renderMealItem}
+    />
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  screen: {
+    backgroundColor: 'white',
+  },
+});
 
 export default CategoryMealsScreen;
