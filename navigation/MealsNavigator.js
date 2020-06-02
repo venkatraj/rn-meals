@@ -13,9 +13,9 @@ const MealsNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="categories" component={CategoriesScreen} />
-        <Stack.Screen name="category meals" component={CategoryMealsScreen} />
-        <Stack.Screen name="meal detail" component={MealDetailScreen} />
+        <Stack.Screen name="Categories" component={CategoriesScreen} />
+        <Stack.Screen name="CategoryMeals" component={CategoryMealsScreen} />
+        <Stack.Screen name="MealDetail" component={MealDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
