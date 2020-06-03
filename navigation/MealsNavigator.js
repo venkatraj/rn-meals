@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, ClippingRectangle } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import CategoriesScreen from '../screens/CategoriesScreen';
 import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
+import HeaderButton from '../components/HeaderButton';
 
 const Stack = createStackNavigator();
 
@@ -34,6 +34,7 @@ const MealsNavigator = () => {
           options={({ route }) => ({
             id: route.params.id,
             title: route.params.title,
+            headerRight: () => <HeaderButton />,
           })}
           name="MealDetail"
           component={MealDetailScreen}

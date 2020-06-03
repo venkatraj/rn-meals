@@ -24,6 +24,7 @@ const CategoryMealsScreen = (props) => {
       navigation.navigate('MealDetail', {
         id,
         title,
+        headerRight: 'fav!',
       });
     };
 
