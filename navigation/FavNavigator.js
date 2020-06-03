@@ -1,34 +1,23 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import CategoriesScreen from '../screens/CategoriesScreen';
-import CategoryMealsScreen from '../screens/CategoryMealsScreen';
 import MealDetailScreen from '../screens/MealDetailScreen';
 import HeaderButtonRight from '../components/HeaderButtonRight';
 import HeaderButtonLeft from '../components/HeaderButtonLeft';
+import FavoritesScreen from '../screens/FavoritesScreen';
 
 const Stack = createStackNavigator();
 
-const MealsNavigator = () => {
+const FavNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Categories"
-        component={CategoriesScreen}
+        name="Favorites"
+        component={FavoritesScreen}
         options={({ navigation }) => ({
-          title: 'Meal Categories!!',
+          title: 'Favorites',
           headerLeft: () => <HeaderButtonLeft navigation={navigation} />,
         })}
-      />
-      <Stack.Screen
-        options={({ route }) => {
-          return {
-            id: route.params.id,
-            title: route.params.title,
-          };
-        }}
-        name="CategoryMeals"
-        component={CategoryMealsScreen}
       />
       <Stack.Screen
         options={({ route }) => ({
@@ -43,4 +32,4 @@ const MealsNavigator = () => {
   );
 };
 
-export default MealsNavigator;
+export default FavNavigator;

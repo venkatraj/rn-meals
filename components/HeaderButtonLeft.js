@@ -1,18 +1,19 @@
 import React from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
-const HeaderButton = (props) => {
+const HeaderButtonLeft = (props) => {
+  const { navigation } = props;
   const onPress = () => {
-    console.log('Fav!!');
+    navigation.openDrawer();
   };
   return (
     <Ionicons
       onPress={onPress}
-      style={{ paddingRight: 10 }}
-      name="md-star"
+      style={{ paddingLeft: 10 }}
+      name="md-menu"
       size={22}
     />
   );
 };
 
-export default HeaderButton;
+export default HeaderButtonLeft;

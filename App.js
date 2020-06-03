@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
-import MealsNavigator from './navigation/MealsNavigator';
+import DrawerNavigator from './navigation/DrawerNavigator';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -23,15 +22,5 @@ export default function App() {
     );
   }
 
-  return <MealsNavigator />;
+  return <DrawerNavigator />;
 }
-
-const styles = StyleSheet.create({
-  rootContainer: {
-    paddingVertical: 50,
-    paddingHorizontal: 15,
-  },
-  text: {
-    fontFamily: 'open-sans-bold',
-  },
-});

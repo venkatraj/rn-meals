@@ -1,5 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  TouchableNativeFeedbackBase,
+} from 'react-native';
+import { TouchableNativeFeedback } from 'react-native-gesture-handler';
 
 const CategoryGridTile = (props) => {
   const { title, color, onSelect } = props;
@@ -9,7 +16,7 @@ const CategoryGridTile = (props) => {
       onPress={onSelect}
     >
       <View>
-        <Text>{title}</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -25,6 +32,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 3,
     padding: 15,
+  },
+  title: {
+    fontFamily: 'open-sans-bold',
   },
 });
 
